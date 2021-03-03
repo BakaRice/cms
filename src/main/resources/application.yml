@@ -8,4 +8,14 @@ spring:
     username: root
     password: NEFU
     driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    default-property-inclusion: non_null
+
+
+logging:
+  level:
+    root: warn
+    com.ricemarch: debug
+  pattern:
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
 
