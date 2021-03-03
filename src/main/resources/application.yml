@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: mysql://test.ricemarch.com:3306/cms?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+    username: root
+    password: NEFU
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
