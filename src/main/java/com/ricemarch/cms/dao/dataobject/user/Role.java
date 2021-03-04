@@ -1,4 +1,4 @@
-package com.ricemarch.cms.dataobject.user;
+package com.ricemarch.cms.dao.dataobject.user;
 
 import java.util.Date;
 
