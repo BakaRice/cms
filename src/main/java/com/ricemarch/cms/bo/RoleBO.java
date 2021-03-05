@@ -1,4 +1,4 @@
-package com.ricemarch.cms.BO;
+package com.ricemarch.cms.bo;
 
 import lombok.Data;
 

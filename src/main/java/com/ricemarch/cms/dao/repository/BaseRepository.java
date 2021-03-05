@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.toolkit.MapUtils;
 import com.baomidou.mybatisplus.toolkit.ReflectionKit;
 import com.baomidou.mybatisplus.toolkit.StringUtils;
 import com.baomidou.mybatisplus.toolkit.TableInfoHelper;
+import com.ricemarch.cms.dao.mapper.SysReqLogWriteMapper;
 import org.apache.ibatis.jdbc.RuntimeSqlException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,7 @@ public class BaseRepository<M extends BaseMapper<T>, T> {
 
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired
+    @Resource
     protected M baseMapper;
 
     /**

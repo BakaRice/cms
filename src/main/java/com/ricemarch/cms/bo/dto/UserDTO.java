@@ -1,8 +1,16 @@
-package com.ricemarch.cms.dao.dataobject.user;
+package com.ricemarch.cms.bo.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+/**
+ * @Description:
+ * @author: tanwentao
+ * @date: 2021/3/4
+ */
+
+public class UserDTO implements Serializable {
+    private static final long serialVersionUID = 866171108910722674L;
     /**
      * 主键
      */
@@ -12,11 +20,6 @@ public class User {
      * 微信小程序openId
      */
     private String openId;
-
-    /**
-     * 微信unionId
-     */
-    private String unionId;
 
     /**
      * 名称
@@ -49,11 +52,14 @@ public class User {
     private Boolean accountState;
 
     /**
+     * 性别
+     */
+    private String gender;
+
+    /**
      * 薪水
      */
     private Double salary;
-
-    private String gender;
 
     private Boolean active;
 
@@ -99,11 +105,6 @@ public class User {
     private Long tenantId;
 
     /**
-     * 组织机构账号ID
-     */
-    private Long sysUserId;
-
-    /**
      * 密码是否手动设置
      */
     private Boolean resetFlag;
@@ -112,6 +113,11 @@ public class User {
      * 备注
      */
     private String mark;
+
+    /**
+     * 组织机构账号ID
+     */
+    private Long sysUserId;
 
     /**
      * 是否删除
@@ -131,8 +137,6 @@ public class User {
     private Date createTime;
 
     private Date updateTime;
-
-    private String userNo;
 
     /**
      * 门店编码
@@ -157,14 +161,6 @@ public class User {
 
     public void setOpenId(String openId) {
         this.openId = openId;
-    }
-
-    public String getUnionId() {
-        return unionId;
-    }
-
-    public void setUnionId(String unionId) {
-        this.unionId = unionId;
     }
 
     public String getUsername() {
@@ -215,20 +211,20 @@ public class User {
         this.accountState = accountState;
     }
 
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
-
     public String getGender() {
         return gender;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
     public Boolean getActive() {
@@ -319,14 +315,6 @@ public class User {
         this.tenantId = tenantId;
     }
 
-    public Long getSysUserId() {
-        return sysUserId;
-    }
-
-    public void setSysUserId(Long sysUserId) {
-        this.sysUserId = sysUserId;
-    }
-
     public Boolean getResetFlag() {
         return resetFlag;
     }
@@ -341,6 +329,14 @@ public class User {
 
     public void setMark(String mark) {
         this.mark = mark;
+    }
+
+    public Long getSysUserId() {
+        return sysUserId;
+    }
+
+    public void setSysUserId(Long sysUserId) {
+        this.sysUserId = sysUserId;
     }
 
     public Boolean getIsDelete() {
@@ -381,14 +377,6 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getUserNo() {
-        return userNo;
-    }
-
-    public void setUserNo(String userNo) {
-        this.userNo = userNo;
     }
 
     public String getStoreNo() {

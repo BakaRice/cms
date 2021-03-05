@@ -1,13 +1,15 @@
 package com.ricemarch.cms.dao.dataobject.user;
 
-import com.ricemarch.cms.BO.RoleBO;
+import com.ricemarch.cms.bo.RoleBO;
+import com.ricemarch.cms.entity.User;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class UserFullInfo extends User {
+//extends User
+public class UserFullInfo {
     private List<RoleBO> roleBOList;
     private Store store;
     /**
@@ -16,9 +18,9 @@ public class UserFullInfo extends User {
     private boolean readOnly = false;
 
     /**
-     * 门店类型：1自主门店，2途虎合作店，3汽配龙三方店
+     * 機構类型：
      */
-    private Byte storeType;
+    private Byte institutionType;
 
     @ApiModelProperty("岗位名称")
     private String positionName;
