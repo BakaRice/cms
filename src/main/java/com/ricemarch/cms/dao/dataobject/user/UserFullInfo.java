@@ -11,7 +11,8 @@ import java.util.List;
 //extends User
 public class UserFullInfo {
     private List<RoleBO> roleBOList;
-    private Store store;
+//    private Store store;
+    //TODO 机构
     /**
      * 门店老板及督导不可编辑
      */
