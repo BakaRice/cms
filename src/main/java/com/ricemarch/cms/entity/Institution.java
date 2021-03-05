@@ -1,12 +1,12 @@
 package com.ricemarch.cms.entity;
 
-import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -17,194 +17,126 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author ricemarch
- * @since 2021-03-04
+ * @since 2021-03-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Institution extends Model<Institution> {
+@ApiModel(value="Institution对象", description="机构（车间，检查班，仓库等）")
+public class Institution implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    /**
-     * 租户ID
-     */
-    @TableField("tenant_id")
+
+    @ApiModelProperty(value = "租户ID")
     private Long tenantId;
-    /**
-     * 公司ID
-     */
-    @TableField("company_id")
+
+    @ApiModelProperty(value = "公司ID")
     private Long companyId;
-    /**
-     * 状态 0 正常
-     */
-    @TableField("status_type")
+
+    @ApiModelProperty(value = "状态 0 正常")
     private Integer statusType;
-    /**
-     * 门店名称
-     */
-    @TableField("institution_name")
+
+    @ApiModelProperty(value = "门店名称")
     private String institutionName;
-    /**
-     * 门店门头图片
-     */
-    @TableField("image_path")
+
+    @ApiModelProperty(value = "门店门头图片")
     private String imagePath;
-    /**
-     * 城市ID
-     */
-    @TableField("city_id")
+
+    @ApiModelProperty(value = "城市ID")
     private String cityId;
-    /**
-     * 区ID
-     */
-    @TableField("region_id")
+
+    @ApiModelProperty(value = "区ID")
     private String regionId;
-    /**
-     * 门店地址
-     */
+
+    @ApiModelProperty(value = "门店地址")
     private String address;
-    /**
-     * 负责人
-     */
-    @TableField("principal_name")
+
+    @ApiModelProperty(value = "负责人")
     private String principalName;
-    /**
-     * 联系人姓名
-     */
-    @TableField("contact_name")
+
+    @ApiModelProperty(value = "联系人姓名")
     private String contactName;
-    /**
-     * 固定电话
-     */
-    @TableField("line_telephone")
+
+    @ApiModelProperty(value = "固定电话")
     private String lineTelephone;
-    /**
-     * 手机
-     */
-    @TableField("mobile_phone")
+
+    @ApiModelProperty(value = "手机")
     private String mobilePhone;
-    /**
-     * 电子邮箱
-     */
+
+    @ApiModelProperty(value = "电子邮箱")
     private String email;
-    /**
-     * 网址
-     */
+
+    @ApiModelProperty(value = "网址")
     private String website;
-    /**
-     * 传真
-     */
+
+    @ApiModelProperty(value = "传真")
     private String fax;
-    /**
-     * 经营范围
-     */
-    @TableField("business_scope")
+
+    @ApiModelProperty(value = "经营范围")
     private String businessScope;
-    /**
-     * 邮编
-     */
+
+    @ApiModelProperty(value = "邮编")
     private String post;
-    /**
-     * qq账号
-     */
-    @TableField("qq_account")
+
+    @ApiModelProperty(value = "qq账号")
     private String qqAccount;
-    /**
-     * 开户银行
-     */
-    @TableField("bank_name")
+
+    @ApiModelProperty(value = "开户银行")
     private String bankName;
-    /**
-     * 银行账号
-     */
-    @TableField("bank_account")
+
+    @ApiModelProperty(value = "银行账号")
     private String bankAccount;
-    /**
-     * 营业时间起
-     */
-    @TableField("opening_effective_date")
+
+    @ApiModelProperty(value = "营业时间起")
     private Date openingEffectiveDate;
-    /**
-     * 营业时间止
-     */
-    @TableField("opening_expiry_date")
+
+    @ApiModelProperty(value = "营业时间止")
     private Date openingExpiryDate;
-    /**
-     * 备注
-     */
+
+    @ApiModelProperty(value = "备注")
     private String memo;
-    /**
-     * 创建用户
-     */
-    @TableField("create_user")
+
+    @ApiModelProperty(value = "创建用户")
     private String createUser;
-    /**
-     * 更改用户
-     */
-    @TableField("update_user")
+
+    @ApiModelProperty(value = "更改用户")
     private String updateUser;
-    /**
-     * 创建时间
-     */
-    @TableField("create_time")
+
+    @ApiModelProperty(value = "创建时间")
     private Date createTime;
-    /**
-     * 更新时间
-     */
-    @TableField("update_time")
+
+    @ApiModelProperty(value = "更新时间")
     private Date updateTime;
-    /**
-     * 门店照片,最多5张,多个逗号分隔
-     */
-    @TableField("image_paths")
+
+    @ApiModelProperty(value = "门店照片,最多5张,多个逗号分隔")
     private String imagePaths;
-    /**
-     * c端预约电话
-     */
-    @TableField("client_appoint_phone")
+
+    @ApiModelProperty(value = "c端预约电话")
     private String clientAppointPhone;
-    /**
-     * c端展示标签id,多个逗号分隔
-     */
-    @TableField("client_tag")
+
+    @ApiModelProperty(value = "c端展示标签id,多个逗号分隔")
     private String clientTag;
-    /**
-     * c端展示常规服务项目编码code，项目名称，别名,json字符串
-     */
-    @TableField("client_common_service")
+
+    @ApiModelProperty(value = "c端展示常规服务项目编码code，项目名称，别名,json字符串")
     private String clientCommonService;
-    /**
-     * 门店地址经度
-     */
+
+    @ApiModelProperty(value = "门店地址经度")
     private Double lon;
-    /**
-     * 门店地址维度
-     */
+
+    @ApiModelProperty(value = "门店地址维度")
     private Double lat;
-    /**
-     * 微信小程序二维码图片链接
-     */
-    @TableField("weixin_qr_url")
+
+    @ApiModelProperty(value = "微信小程序二维码图片链接")
     private String weixinQrUrl;
-    /**
-     * 门店编码
-     */
-    @TableField("store_no")
+
+    @ApiModelProperty(value = "门店编码")
     private String storeNo;
-    /**
-     * 是否删除
-     */
-    @TableField("is_delete")
-    private Integer isDelete;
 
+    @ApiModelProperty(value = "是否删除")
+    private Boolean isDelete;
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
 
 }

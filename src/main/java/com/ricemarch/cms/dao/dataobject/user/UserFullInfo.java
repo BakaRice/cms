@@ -1,7 +1,6 @@
 package com.ricemarch.cms.dao.dataobject.user;
 
 import com.ricemarch.cms.bo.RoleBO;
-import com.ricemarch.cms.entity.User;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

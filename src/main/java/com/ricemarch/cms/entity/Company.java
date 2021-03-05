@@ -1,12 +1,12 @@
 package com.ricemarch.cms.entity;
 
-import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -17,82 +17,58 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author ricemarch
- * @since 2021-03-04
+ * @since 2021-03-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Company extends Model<Company> {
+@ApiModel(value="Company对象", description="公司")
+public class Company implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    /**
-     * 租户ID
-     */
-    @TableField("tenant_id")
+
+    @ApiModelProperty(value = "租户ID")
     private Long tenantId;
-    /**
-     * 公司名称
-     */
-    @TableField("company_name")
+
+    @ApiModelProperty(value = "公司名称")
     private String companyName;
-    /**
-     * 公司描述
-     */
+
+    @ApiModelProperty(value = "公司描述")
     private String description;
-    /**
-     * 联系人姓名
-     */
-    @TableField("contact_name")
+
+    @ApiModelProperty(value = "联系人姓名")
     private String contactName;
-    /**
-     * 联系人手机
-     */
-    @TableField("contact_mobile_phone")
+
+    @ApiModelProperty(value = "联系人手机")
     private String contactMobilePhone;
-    /**
-     * 公司电话
-     */
+
+    @ApiModelProperty(value = "公司电话")
     private String telephone;
-    /**
-     * 公司通讯地址
-     */
+
+    @ApiModelProperty(value = "公司通讯地址")
     private String address;
-    /**
-     * 营业执照照片
-     */
-    @TableField("image_url")
+
+    @ApiModelProperty(value = "营业执照照片")
     private String imageUrl;
-    /**
-     * 邮箱
-     */
+
+    @ApiModelProperty(value = "邮箱")
     private String email;
-    /**
-     * 状态 0 正常
-     */
-    @TableField("status_type")
+
+    @ApiModelProperty(value = "状态 0 正常")
     private Integer statusType;
-    /**
-     * 创建用户
-     */
-    @TableField("create_user")
+
+    @ApiModelProperty(value = "创建用户")
     private String createUser;
-    /**
-     * 更新用户
-     */
-    @TableField("update_user")
+
+    @ApiModelProperty(value = "更新用户")
     private String updateUser;
-    @TableField("create_time")
+
     private Date createTime;
-    @TableField("update_time")
+
     private Date updateTime;
 
-
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
 
 }

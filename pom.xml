@@ -81,11 +81,6 @@
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
             <version>2.3</version>
         </dependency>
@@ -94,17 +89,18 @@
             <artifactId>mybatis-plus-support</artifactId>
             <version>2.3</version>
         </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generate</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <!-- 模板引擎 -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.baomidou</groupId>-->
+        <!--            <artifactId>mybatis-plus-generate</artifactId>-->
+        <!--            <version>2.3</version>-->
+        <!--        </dependency>-->
+        <!-- velocity 模板引擎, Mybatis Plus 代码生成器需要 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
             <version>2.0</version>
         </dependency>
+
         <!-- END   mybatis-plus    -->
 
         <dependency>

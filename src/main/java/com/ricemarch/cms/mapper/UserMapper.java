@@ -1,7 +1,7 @@
-package com.ricemarch.cms.dao.mapper;
+package com.ricemarch.cms.mapper;
 
-import com.ricemarch.cms.entity.User;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.ricemarch.cms.entity.User;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author ricemarch
- * @since 2021-03-04
+ * @since 2021-03-05
  */
 public interface UserMapper extends BaseMapper<User> {
 

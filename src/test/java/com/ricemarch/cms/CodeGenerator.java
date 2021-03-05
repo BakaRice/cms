@@ -1,11 +1,12 @@
 package com.ricemarch.cms;
 
+
+import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.jupiter.api.Test;
 
@@ -34,6 +35,8 @@ public class CodeGenerator {
 //        gc.setIdType(IdType.AUTO); //主键策略
 //        gc.setDateType(DateType.ONLY_DATE);//定义生成的实体类中日期类型
 //        gc.setSwagger2(true);//开启Swagger2模式
+        gc.setBaseResultMap(true);
+        gc.setBaseColumnList(true);
 
         mpg.setGlobalConfig(gc);
 
@@ -43,7 +46,7 @@ public class CodeGenerator {
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("NEFU");
-        dsc.setDbType(DbType.MYSQL);
+//        dsc.setDbType(DateType.ONLY_DATE);
         mpg.setDataSource(dsc);
 
         // 4、包配置
@@ -58,7 +61,7 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("tenant");
+        strategy.setInclude("sys_req_log");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
 

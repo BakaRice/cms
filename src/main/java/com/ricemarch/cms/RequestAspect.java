@@ -1,6 +1,6 @@
 package com.ricemarch.cms;
 
-import com.ricemarch.cms.dao.dataobject.sys.SysReqLog;
+import com.ricemarch.cms.entity.sys.SysReqLog;
 import com.ricemarch.cms.service.impl.SysReqLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -13,6 +13,7 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.time.Instant;
 import java.util.Date;
 
@@ -26,7 +27,7 @@ import java.util.Date;
 @Order(Ordered.LOWEST_PRECEDENCE - 10)
 public class RequestAspect {
 
-    @Autowired
+    @Resource
     private SysReqLogService sysReqLogService;
 
 
